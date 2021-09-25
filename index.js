@@ -11,7 +11,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 
-//MiddleWare
+//MiddleWare desde dev
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
