@@ -76,22 +76,7 @@ app.put('/api/product/:productId', (req, res) => {
     })
 })
 
-app.delete('/api/product/:productId', (req, res) => {
-    let productId = req.params.productId;
 
-    Product.findById(productId, (err, product) => {
-        if (err) {
-            res.status(500).send({ message: `Error al borrar producto: ${err}` });
-        }
-        product.remove(err => {
-            if (err) {
-                res.status(500).send({ message: `Error al borrar producto: ${err}` });
-            }
-            res.status(200).send({ messaje: "El producto ha sido eliminado" });
-        })
-    })
-
-})
 
 mongoose.connect('mongodb://127.0.0.1:27017/shop', (err, res) => {
     if (err) {
